@@ -1,6 +1,4 @@
-﻿export const instant = false;
-
-"use client";
+﻿"use client";
 
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
@@ -141,3 +139,4 @@ export default function NewClientSubscriptionPage() {
     </div>
   );
 }
+
