@@ -1,10 +1,12 @@
-export const dynamic = "force-dynamic";
+import { unstable_noStore as noStore } from "next/cache";
 import Link from "next/link";
 import { createClient } from "@/lib/supabase/server";
 import { notFound } from "next/navigation";
 import TaskForm from "@/components/admin/TaskForm";
 
 export default async function ProjectDetailsPage({ params }: { params: Promise<{ id: string }> }) {
+  noStore(); // This is the correct Next.js 16 way to prevent static caching
+  
   const { id } = await params;
   const supabase = await createClient();
 
@@ -139,8 +141,8 @@ export default async function ProjectDetailsPage({ params }: { params: Promise<{
                         <span className="text-xs font-medium text-slate-400 uppercase tracking-wide">{task.task_reference || task.id.slice(0, 8)}</span>
                       </div>
                       <Link href={`/admin/tasks/${task.id}`} className="block mt-1 group">
-  <h3 className="font-medium text-slate-900 group-hover:text-[#1E40AF] transition-colors">{task.title}</h3>
-</Link>
+                        <h3 className="font-medium text-slate-900 group-hover:text-[#1E40AF] transition-colors">{task.title}</h3>
+                      </Link>
                       {task.due_date && (
                         <p className="text-xs text-slate-500 mt-1">Due: {task.due_date}</p>
                       )}
