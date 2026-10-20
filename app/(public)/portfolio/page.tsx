@@ -1,6 +1,6 @@
+import { unstable_noStore as noStore } from "next/cache";
 import Link from "next/link";
-import { createClient } from "@/lib/supabase/server";
-export const revalidate = 0
+import { createClient } from "@/lib/supabase/server"
 export default async function PortfolioPage() {
   const supabase = await createClient();
 
