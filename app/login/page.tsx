@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
@@ -74,7 +74,7 @@ export default function LoginPage() {
             disabled={loading}
             className="w-full bg-[#0A1F44] text-white font-medium py-2.5 rounded-md hover:bg-[#1E40AF] disabled:opacity-50"
           >
-            {loading ? "Signing in…" : "Sign in"}
+            {loading ? "Signing inâ€¦" : "Sign in"}
           </button>
         </form>
       </div>
