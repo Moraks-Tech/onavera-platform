@@ -1,3 +1,4 @@
+export const instant = false;
 import PrintButton from "@/components/admin/PrintButton";
 import RecordPaymentModal from "@/components/admin/RecordPaymentModal";
 import Link from "next/link";
