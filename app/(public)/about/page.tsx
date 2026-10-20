@@ -1,6 +1,25 @@
+import Link from "next/link";
+
 export default function AboutPage() {
   return (
     <div className="bg-white">
+      
+      {/* PROFESSIONAL BREADCRUMB HEADER */}
+      <div className="bg-[#0A1F44] pt-6 pb-2">
+        <div className="max-w-5xl mx-auto px-6">
+          <nav className="flex items-center text-sm font-medium text-slate-400">
+            <Link href="/" className="hover:text-white transition-colors flex items-center gap-1.5">
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+              </svg>
+              Home
+            </Link>
+            <span className="mx-2 text-slate-600">/</span>
+            <span className="text-white">About Us</span>
+          </nav>
+        </div>
+      </div>
+
       {/* HEADER WITH BACKGROUND IMAGE */}
       <div 
         className="relative py-24 px-6 text-center bg-cover bg-center bg-no-repeat"
@@ -18,7 +37,6 @@ export default function AboutPage() {
       </div>
 
       <div className="max-w-5xl mx-auto px-6 py-24 space-y-24">
-        
         {/* MISSION & VISION */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <div className="bg-slate-50 p-10 rounded-2xl border border-slate-200 shadow-sm relative overflow-hidden group hover:border-[#1E40AF] transition-colors">
@@ -62,7 +80,6 @@ export default function AboutPage() {
             ))}
           </div>
         </div>
-
       </div>
     </div>
   );

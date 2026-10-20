@@ -4,7 +4,6 @@ import { createClient } from "@/lib/supabase/server";
 export default async function PortfolioPage() {
   const supabase = await createClient();
 
-  // Fetch only projects marked as public AND completed
   const { data: projects } = await supabase
     .from("projects")
     .select("*")
@@ -14,6 +13,22 @@ export default async function PortfolioPage() {
 
   return (
     <div className="bg-slate-50 min-h-screen">
+      {/* PROFESSIONAL BREADCRUMB HEADER */}
+      <div className="bg-[#0A1F44] pt-6 pb-2">
+        <div className="max-w-6xl mx-auto px-6">
+          <nav className="flex items-center text-sm font-medium text-slate-400">
+            <Link href="/" className="hover:text-white transition-colors flex items-center gap-1.5">
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+              </svg>
+              Home
+            </Link>
+            <span className="mx-2 text-slate-600">/</span>
+            <span className="text-white">Portfolio</span>
+          </nav>
+        </div>
+      </div>
+
       {/* HEADER WITH BACKGROUND IMAGE */}
       <div 
         className="relative py-24 px-6 text-center bg-cover bg-center bg-no-repeat"
@@ -44,7 +59,6 @@ export default async function PortfolioPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project) => (
               <div key={project.id} className="bg-white rounded-xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
-                {/* Image */}
                 <div className="aspect-video bg-slate-100 border-b border-slate-200 relative">
                   {project.public_image_url ? (
                     <img src={project.public_image_url} alt={project.name} className="w-full h-full object-cover" />
@@ -52,8 +66,6 @@ export default async function PortfolioPage() {
                     <div className="flex items-center justify-center h-full text-slate-400">No image available</div>
                   )}
                 </div>
-                
-                {/* Content */}
                 <div className="p-6">
                   <div className="text-xs font-bold text-[#C9A227] uppercase tracking-widest mb-2">
                     {project.service_category || "Software"}

@@ -30,7 +30,7 @@ export default function PublicFooter() {
         </div>
       </div>
       <div className="max-w-6xl mx-auto px-6 mt-12 pt-6 border-t border-slate-700 text-xs text-slate-500 text-center">
-        © {new Date().getFullYear()} ONAVERA Technologies. All rights reserved.
+        © 2026 ONAVERA Technologies. All rights reserved.
       </div>
     </footer>
   );

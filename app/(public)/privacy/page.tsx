@@ -1,6 +1,25 @@
+import Link from "next/link";
+
 export default function PrivacyPage() {
   return (
     <div className="bg-slate-50 min-h-screen pb-20">
+      
+      {/* PROFESSIONAL BREADCRUMB HEADER */}
+      <div className="bg-[#0A1F44] pt-6 pb-2">
+        <div className="max-w-3xl mx-auto px-6">
+          <nav className="flex items-center text-sm font-medium text-slate-400">
+            <Link href="/" className="hover:text-white transition-colors flex items-center gap-1.5">
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+              </svg>
+              Home
+            </Link>
+            <span className="mx-2 text-slate-600">/</span>
+            <span className="text-white">Privacy Policy</span>
+          </nav>
+        </div>
+      </div>
+
       {/* HEADER WITH BACKGROUND IMAGE */}
       <div 
         className="relative py-24 px-6 text-center bg-cover bg-center bg-no-repeat"
@@ -17,7 +36,7 @@ export default function PrivacyPage() {
 
       <div className="max-w-3xl mx-auto px-6 -mt-10 relative z-20">
         <div className="bg-white p-8 md:p-12 rounded-xl shadow-sm border border-slate-200 text-slate-600 space-y-6">
-          <p className="text-sm text-slate-500">Last updated: {new Date().toLocaleDateString()}</p>
+          <p className="text-sm text-slate-500">Last updated: {new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}</p>
           
           <h2 className="text-xl font-bold text-[#0A1F44]">1. Information We Collect</h2>
           <p>When you use our contact form, we collect your name, email address, phone number (optional), and the details of your enquiry. We do not collect payment information directly through this website.</p>
