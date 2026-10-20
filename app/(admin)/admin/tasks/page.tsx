@@ -1,3 +1,5 @@
+﻿export const instant = false;
+
 import Link from "next/link";
 import { createClient } from "@/lib/supabase/server";
 
@@ -59,7 +61,7 @@ export default async function CentralTasksPage() {
                     </span>
                   </td>
                   <td className="px-6 py-4 text-slate-600 capitalize">{task.priority}</td>
-                  <td className="px-6 py-4 text-slate-600">{task.due_date || "—"}</td>
+                  <td className="px-6 py-4 text-slate-600">{task.due_date || "â€”"}</td>
                 </tr>
               ))}
             </tbody>

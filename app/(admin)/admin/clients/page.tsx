@@ -1,3 +1,5 @@
+﻿export const instant = false;
+
 import Link from "next/link";
 import { createClient } from "@/lib/supabase/server";
 
@@ -58,7 +60,7 @@ export default async function ClientsPage() {
                     <td className="px-6 py-4 font-medium text-slate-900">{displayName}</td>
                     <td className="px-6 py-4 text-slate-600 capitalize">{client.type}</td>
                     <td className="px-6 py-4 text-slate-600">
-                      <div>{client.email || "—"}</div>
+                      <div>{client.email || "â€”"}</div>
                       <div className="text-xs">{client.primary_phone_e164 || ""}</div>
                     </td>
                     <td className="px-6 py-4">

@@ -1,3 +1,5 @@
+﻿export const instant = false;
+
 import Link from "next/link";
 import { createClient } from "@/lib/supabase/server";
 
@@ -46,15 +48,15 @@ export default async function DashboardPage() {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         <div className="bg-white rounded-lg border border-slate-200 p-5 shadow-sm">
           <div className="text-xs font-medium text-slate-500 uppercase tracking-wide">Cash Received</div>
-          <div className="text-2xl font-bold text-green-600 mt-2">₦{totalCashReceived.toLocaleString()}</div>
+          <div className="text-2xl font-bold text-green-600 mt-2">â‚¦{totalCashReceived.toLocaleString()}</div>
         </div>
         <div className="bg-white rounded-lg border border-slate-200 p-5 shadow-sm">
           <div className="text-xs font-medium text-slate-500 uppercase tracking-wide">Outstanding Receivables</div>
-          <div className="text-2xl font-bold text-amber-600 mt-2">₦{outstandingReceivables.toLocaleString()}</div>
+          <div className="text-2xl font-bold text-amber-600 mt-2">â‚¦{outstandingReceivables.toLocaleString()}</div>
         </div>
         <div className="bg-white rounded-lg border border-slate-200 p-5 shadow-sm">
           <div className="text-xs font-medium text-slate-500 uppercase tracking-wide">Operating Expenses</div>
-          <div className="text-2xl font-bold text-red-600 mt-2">₦{totalExpenses.toLocaleString()}</div>
+          <div className="text-2xl font-bold text-red-600 mt-2">â‚¦{totalExpenses.toLocaleString()}</div>
         </div>
         <div className="bg-white rounded-lg border border-slate-200 p-5 shadow-sm">
           <div className="text-xs font-medium text-slate-500 uppercase tracking-wide">Active Projects</div>
@@ -80,7 +82,7 @@ export default async function DashboardPage() {
                     <div className="text-xs text-slate-500 mt-0.5">{getClientName(inv.client_id)}</div>
                   </div>
                   <div className="text-right">
-                    <div className="font-medium text-slate-900">₦{Number(inv.total).toLocaleString()}</div>
+                    <div className="font-medium text-slate-900">â‚¦{Number(inv.total).toLocaleString()}</div>
                     <div className="text-xs mt-0.5 capitalize text-slate-500">{inv.status.replace("_", " ")}</div>
                   </div>
                 </div>

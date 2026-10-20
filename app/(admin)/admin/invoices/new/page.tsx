@@ -1,3 +1,5 @@
+﻿export const instant = false;
+
 "use client";
 
 import { useState, useEffect } from "react";
@@ -180,7 +182,7 @@ export default function NewInvoicePage() {
                 <input type="number" required min="1" value={item.quantity} onChange={(e) => handleItemChange(index, "quantity", Number(e.target.value))} className={inputClass} />
               </div>
               <div className="col-span-4 md:col-span-2">
-                <label className="block text-xs text-slate-500 mb-1">Price (₦)</label>
+                <label className="block text-xs text-slate-500 mb-1">Price (â‚¦)</label>
                 <input type="number" required min="0" value={item.unit_price} onChange={(e) => handleItemChange(index, "unit_price", Number(e.target.value))} className={inputClass} />
               </div>
               <div className="col-span-3 md:col-span-2">
@@ -201,9 +203,9 @@ export default function NewInvoicePage() {
         {/* Totals & Save */}
         <div className="bg-white rounded-lg border border-slate-200 p-6 shadow-sm flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
           <div className="space-y-1 text-sm text-slate-600 w-full md:w-1/2">
-            <div className="flex justify-between border-b pb-1"><span>Subtotal:</span> <span>₦{subtotal.toLocaleString()}</span></div>
-            <div className="flex justify-between border-b pb-1"><span>Tax:</span> <span>₦{taxAmount.toLocaleString()}</span></div>
-            <div className="flex justify-between font-bold text-[#0A1F44] text-lg mt-2"><span>Total:</span> <span>₦{total.toLocaleString()}</span></div>
+            <div className="flex justify-between border-b pb-1"><span>Subtotal:</span> <span>â‚¦{subtotal.toLocaleString()}</span></div>
+            <div className="flex justify-between border-b pb-1"><span>Tax:</span> <span>â‚¦{taxAmount.toLocaleString()}</span></div>
+            <div className="flex justify-between font-bold text-[#0A1F44] text-lg mt-2"><span>Total:</span> <span>â‚¦{total.toLocaleString()}</span></div>
           </div>
           <div className="flex gap-3">
             <Link href="/admin/invoices" className="px-4 py-2 text-sm font-medium text-slate-600 border border-slate-300 rounded hover:bg-slate-50">Cancel</Link>

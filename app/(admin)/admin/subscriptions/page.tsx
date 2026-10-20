@@ -1,3 +1,5 @@
+﻿export const instant = false;
+
 import Link from "next/link";
 
 export default function SubscriptionsLandingPage() {

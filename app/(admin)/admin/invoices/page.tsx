@@ -1,3 +1,5 @@
+﻿export const instant = false;
+
 import Link from "next/link";
 import { createClient } from "@/lib/supabase/server";
 
@@ -62,7 +64,7 @@ export default async function InvoicesPage() {
                         {invoice.status.replace("_", " ")}
                       </span>
                     </td>
-                    <td className="px-6 py-4 text-right font-medium">₦{Number(invoice.total || 0).toLocaleString()}</td>
+                    <td className="px-6 py-4 text-right font-medium">â‚¦{Number(invoice.total || 0).toLocaleString()}</td>
                   </tr>
                 );
               })}

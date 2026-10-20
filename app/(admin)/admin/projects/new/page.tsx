@@ -1,3 +1,5 @@
+﻿export const instant = false;
+
 import Link from "next/link";
 import { createClient } from "@/lib/supabase/server";
 import ProjectForm from "@/components/admin/ProjectForm";

@@ -1,3 +1,5 @@
+﻿export const instant = false;
+
 "use client";
 
 import { useState, useEffect } from "react";
@@ -71,7 +73,7 @@ export default function OutgoingSubscriptionsPage() {
                     </span>
                   </td>
                   <td className="px-6 py-4 text-right font-medium">
-                    ₦{Number(sub.price).toLocaleString()}
+                    â‚¦{Number(sub.price).toLocaleString()}
                   </td>
                 </tr>
               ))}

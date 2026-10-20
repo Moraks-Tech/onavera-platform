@@ -1,3 +1,5 @@
+﻿export const instant = false;
+
 import Link from "next/link";
 import { createClient } from "@/lib/supabase/server";
 
@@ -64,7 +66,7 @@ export default async function ProjectsPage() {
                       </span>
                     </td>
                     <td className="px-6 py-4 text-slate-600 font-medium">
-                      ₦{Number(project.amount || 0).toLocaleString()}
+                      â‚¦{Number(project.amount || 0).toLocaleString()}
                     </td>
                     <td className="px-6 py-4 text-right">
                       <Link href={`/admin/projects/${project.id}`} className="text-sm font-medium text-[#1E40AF] hover:text-[#0A1F44] transition-colors">

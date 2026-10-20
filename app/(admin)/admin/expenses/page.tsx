@@ -1,3 +1,5 @@
+﻿export const instant = false;
+
 import Link from "next/link";
 import { createClient } from "@/lib/supabase/server";
 
@@ -65,7 +67,7 @@ export default async function ExpensesPage() {
                     </span>
                   </td>
                   <td className="px-6 py-4 text-right font-medium">
-                    ₦{Number(expense.amount).toLocaleString()}
+                    â‚¦{Number(expense.amount).toLocaleString()}
                   </td>
                 </tr>
               ))}
